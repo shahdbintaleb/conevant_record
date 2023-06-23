@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_covenant_record_form" model="ir.ui.view">
+        <field name="name">covenant_record.view.form</field>
+          <field name="model">covenant.record</field>
+          <field name="arch" type="xml">
+              <form>
+                  <sheet>
+                  <group>
+                      <field name="name"/>
+                      <field name="type"/>
+                      <field name="employee"/>
+                      <field name="date"/>
+                  </group>
+              </sheet>
+              </form>
+          </field>
+    </record>
+
+    <record id="view_covenant_record_tree" model="ir.ui.view">
+        <field name="name">covenant_record.view.tree</field>
+          <field name="model">covenant.record</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="name"/>
+                  <field name="type"/>
+                  <field name="employee"/>
+                  <field name="date"/>
+              </tree>
+          </field>
+    </record>
+
+
+
+    <record id="action_Covenant_Record_view" model="ir.actions.act_window">
+        <field name="name">Covenant_Record</field>
+        <field name="res_model">covenant.record</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="Covenant_Record_roat_menu"
+              name="covenant"
+              sequence="1"/>
+    <menuitem id="Covenant_Record_main_menu"
+              name="Covenant Record "
+              sequence="1"
+              parent="Covenant_Record_roat_menu"/>
+    <menuitem id="All_Covenant_Record_memu"
+              name="All Covenant Record"
+              sequence="1"
+              parent="Covenant_Record_main_menu"
+              action="action_Covenant_Record_view"/>
+
+</odoo>
